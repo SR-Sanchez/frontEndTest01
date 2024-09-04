@@ -21,17 +21,29 @@ function returnList(field: string) {
 	<td>{{ patient.age }}</td>
 	<td>{{ phoneNumber(patient.phone) }}</td>
 
-	<td>{{ patient.gestion['gestion_type']}} {{ patient.gestion['last_contact'] }}</td>
+	<td class="gestion">{{ patient.gestion['gestion_type']}} {{ patient.gestion['last_contact'] }}</td>
 
 	<td>{{ patient.regime }}</td>
 	<!--<td>{{ patient.monitoring }}</td> -->
 	<td>{{ patient.gestor }}</td>
 	<!--<td>{{ patient.status }}</td>-->
-	<td>{{ patient.care_plan }}</td>
+	<!-- <td>{{ patient.care_plan }}</td> -->
+	<td class="dropdown">
+		Plan
+		<button>
+			&#9660
+			<ul class="uncontrolled">
+				<li v-for="item in returnList(patient.care_plan)">{{ item }}</li>
+			</ul>
+		</button>
+		
+	</td>
+	
 	<!--<td>{{ patient.intervention }}</td>-->
-	<td class="clinical_data_uncontrolled">
+	<td class="dropdown">
 		Clínicos
-		<button>&#9660
+		<button>
+			&#9660
 			<ul class="uncontrolled">
 				<li v-for="item in returnList(patient.clinical_data_uncontrolled)">{{ item }}</li>
 			</ul>
@@ -49,9 +61,10 @@ function returnList(field: string) {
 	td {
 		border: 1px solid #ddd;
 		padding: 8px;
+		white-space: nowrap; 
 	}
 
-	.clinical_data_uncontrolled {
+	.dropdown {
 		max-height: 16px;
 		position: relative;
 		/* overflow-y: hidden;
@@ -61,17 +74,19 @@ function returnList(field: string) {
 			font-size: 12px;
 			padding: 0px;
 
-
 			.uncontrolled {
 				display: none;
 				list-style: none;
 				position: absolute;
 				background-color: bisque;
+				padding: 8px;
 				max-height: 80px;
 				overflow-y: scroll;
 				overflow-x: scroll;
 				top: 50%;
 				left: 0%;
+				width: 100%;
+				z-index: 1;
 			}
 		}
 
@@ -83,15 +98,4 @@ function returnList(field: string) {
 		}
 	}
 
-	/* .uncontrolled {
-		display: none;
-		list-style: none;
-		position: absolute;
-		background-color: bisque;
-		max-height: 80px;
-		overflow-y: scroll;
-		overflow-x: scroll;
-		top: 50%;
-		left: 0%;
-	} */
 </style>

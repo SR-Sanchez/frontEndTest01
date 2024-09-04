@@ -80,6 +80,7 @@ const filteredPatients = computed(() => {
 	table {
   width: 100%;
   border-collapse: collapse; /**STUDY THIS MORE */
+	
 	}
 
 	th, td {
