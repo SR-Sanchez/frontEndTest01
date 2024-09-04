@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import Patient from './components/Patient.vue'
 import Navbar from './components/Navbar.vue';
+import PatientView from './views/PatientView.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
   <div id="app">
     <Navbar />
+    
     <div class="content">
-      <Patient />
+      <!-- <Patient /> -->
+      <!-- <PatientView /> -->
+       <RouterView/>
     </div>
   </div>
 </template>
@@ -24,5 +29,6 @@ import Navbar from './components/Navbar.vue';
   flex: 1; /* Allow content to take remaining space */
   overflow-y: scroll;
   overflow-x: scroll;
+  height: 80%; /**MODIFY THIS */
 }
 </style>
