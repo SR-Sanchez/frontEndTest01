@@ -20,16 +20,18 @@ let showConfirm = ref(false);
 let showPlan= ref(false)
 let showMenu= ref(false)
 
-function toggle() {
-	showConfirm.value = !showConfirm.value
-}
 
-function toggle2() {
+
+function toggle1() {
 	showPlan.value = !showPlan.value
 }
 
-function toggle3(){
+function toggle2(){
 	showMenu.value = !showMenu.value
+}
+
+function toggle3() {
+	showConfirm.value = !showConfirm.value
 }
 
 const router = useRouter();
@@ -60,7 +62,7 @@ function test(id: string) {
 	<td>{{ patient.gestor }}</td>
 	<td class="dropdown">
 		Plan
-		<button v-on:click="toggle2()">&#9660</button>
+		<button v-on:click="toggle1()">&#9660</button>
 		<ul v-if="showPlan" class="care_plan">
 			<li v-for="item in returnList(patient.care_plan)">{{ item }}</li>
 		</ul>
@@ -69,7 +71,7 @@ function test(id: string) {
 
 	<td class="dropdown">
 		Clínicos
-		<button v-on:click="toggle3()">&#9660</button>
+		<button v-on:click="toggle2()">&#9660</button>
 		<ul v-if="showMenu" class="uncontrolled">
 			<li v-for="item in returnList(patient.clinical_data_uncontrolled)">{{ item }}</li>
 		</ul>
@@ -78,13 +80,13 @@ function test(id: string) {
 
 	<td>{{ patient.ips_name }}</td>
 	<td>
-		<button v-on:click="toggle">X</button>
+		<button v-on:click="toggle3">X</button>
 	</td>
 	<div v-if="showConfirm" class="transparent-background">
 		<div class="confirm">
 			<p>Por favor confirme su decisión</p>
 			<button v-on:click="test(patient.id)">Borrar</button>
-			<button v-on:click="toggle">Cancelar</button>
+			<button v-on:click="toggle3">Cancelar</button>
 		</div>
 	</div>
 </template>
