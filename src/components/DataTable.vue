@@ -5,23 +5,26 @@ import Patient from './Patient.vue';
 
 const headings = [ 
 	"Id",
-	"# Identificación",
-	"Id Único",
+	// "# Identificación",
+	// "Id Único",
 	"Nombre",
 	"Edad",
 	"Teléfono",
-	"Régimen",
-	"Monitoreo",
-	"Gestor",
-	"Estado",
-	"Plan de Cuidado",
-	"Intervención",
-	"Datos Clínicos No Controlados",
-	"Etiqueta de Nombre",
-	"Nombre de IPS",
-	"ID de IPS",
+
 	"Gestión",
-	"Programa"
+
+	"Régimen",
+	// "Monitoreo",
+	"Gestor",
+	// "Estado",
+	"Plan de Cuidado",
+	// "Intervención",
+	"Datos Clínicos No Controlados",
+	// "Etiqueta de Nombre",
+	"Nombre de IPS",
+	// "ID de IPS",
+	// "Gestión",
+	// "Programa"
 ];
 
 const patientsStore = usePatientsStore()
