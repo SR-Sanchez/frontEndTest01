@@ -5,27 +5,34 @@ import { useRouter } from 'vue-router';
 //CHANGE THIS TYPE
 defineProps<{ patient }>()
 
-function phoneNumber(phone: string) {
-	return phone === 'None' ? 'Sin número' : phone
+function isEmpty(data: string | null) {
+	return data === 'None' || data === null ? 'Sin dato' : data
 }
 
+//Creates an array of the string
 function returnList(field: string) {
 	const items = field.split(',');
 	return items
 }
 
-let showConfirm = ref(false)
-let show = false
+//This code is for "deleting" a patient
+let showConfirm = ref(false);
+let showPlan= ref(false)
+let showMenu= ref(false)
 
 function toggle() {
-	show = !show
-	console.log(showConfirm.value)
 	showConfirm.value = !showConfirm.value
-	console.log(showConfirm.value)
+}
+
+function toggle2() {
+	showPlan.value = !showPlan.value
+}
+
+function toggle3(){
+	showMenu.value = !showMenu.value
 }
 
 const router = useRouter();
-
 const patientsStore = usePatientsStore()
 
 function test(id: string) {
@@ -36,59 +43,46 @@ function test(id: string) {
 	router.go(1);
 }
 
-
-
-
 </script>
 
 <template>
 	<td>{{ patient.id }}</td>
-	<!--<td>{{ patient.id_number }}</td>
-	<td>{{ patient.uid }}</td> -->
 	<td>{{ patient.name }}</td>
 	<td>{{ patient.age }}</td>
-	<td>{{ phoneNumber(patient.phone) }}</td>
+	<td>{{ isEmpty(patient.phone) }}</td>
 
-	<td class="gestion">{{ patient.gestion['gestion_type']}} {{ patient.gestion['last_contact'] }}</td>
+	<td class="gestion">
+		{{ patient.gestion['gestion_type']}} 
+		{{ patient.gestion['last_contact'] }}
+	</td>
 
-	<td>{{ patient.regime }}</td>
-	<!--<td>{{ patient.monitoring }}</td> -->
+	<td>{{ isEmpty(patient.regime) }}</td>
 	<td>{{ patient.gestor }}</td>
-	<!--<td>{{ patient.status }}</td>-->
-	<!-- <td>{{ patient.care_plan }}</td> -->
 	<td class="dropdown">
 		Plan
-		<button>
-			&#9660
-			<ul class="care_plan">
-				<li v-for="item in returnList(patient.care_plan)">{{ item }}</li>
-			</ul>
-		</button>
-		
+		<button v-on:click="toggle2()">&#9660</button>
+		<ul v-if="showPlan" class="care_plan">
+			<li v-for="item in returnList(patient.care_plan)">{{ item }}</li>
+		</ul>
 	</td>
-	
-	<!--<td>{{ patient.intervention }}</td>-->
+
+
 	<td class="dropdown">
 		Clínicos
-		<button>
-			&#9660
-			<ul class="uncontrolled">
-				<li v-for="item in returnList(patient.clinical_data_uncontrolled)">{{ item }}</li>
-			</ul>
-		</button>
-		
+		<button v-on:click="toggle3()">&#9660</button>
+		<ul v-if="showMenu" class="uncontrolled">
+			<li v-for="item in returnList(patient.clinical_data_uncontrolled)">{{ item }}</li>
+		</ul>
 	</td>
-	<!--<td>{{ patient.name_tag }}</td>-->
+
+
 	<td>{{ patient.ips_name }}</td>
-	<!--<td>{{ patient.ips_id }}</td>
-	<td>{{ patient.gestion }}</td>
-	<td>{{ patient.program }}</td> -->
 	<td>
-		<button v-on:click="toggle" :disabled="show">X</button>
+		<button v-on:click="toggle">X</button>
 	</td>
 	<div v-if="showConfirm" class="transparent-background">
 		<div class="confirm">
-			<p>Are you sure?</p>
+			<p>Por favor confirme su decisión</p>
 			<button v-on:click="test(patient.id)">Borrar</button>
 			<button v-on:click="toggle">Cancelar</button>
 		</div>
@@ -105,15 +99,8 @@ function test(id: string) {
 	.dropdown {
 		max-height: 16px;
 		position: relative;
-		/* overflow-y: hidden;
-		overflow-x: hidden; */
 
-		button {
-			font-size: 12px;
-			padding: 0px;
-
-			.uncontrolled, .care_plan {
-				display: none;
+		.uncontrolled, .care_plan {
 				list-style: none;
 				position: absolute;
 				background-color: bisque;
@@ -126,13 +113,10 @@ function test(id: string) {
 				width: 100%;
 				z-index: 1;
 			}
-		}
 
-		/**IF I HAVE TIME I SHOULD FIND A MORE ELEGANT SOLUTION TO THIS */
-		button:focus {
-			.uncontrolled, .care_plan {
-				display: block;
-			}
+		button {
+			font-size: 12px;
+			padding: 0px;
 		}
 	}
 
@@ -164,14 +148,6 @@ function test(id: string) {
 			width: 50%;
 		}
 	}
-
-	/* button:focus {
-		.delete {
-			display: flex;
-			flex-direction: column;
-		}	
-	} */
-
 	
 
 </style>
