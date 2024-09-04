@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, reactive } from 'vue'
+import { ref, computed } from 'vue'
 import usePatientsStore from '../stores/patients.ts'
-import json from '../utils/db'
 
 const headings = [ 
 	"Id",
@@ -24,28 +23,15 @@ const headings = [
 	"Programa"
 ];
 
-// const patients = json.results //should be replace for the actual 
 const patientsStore = usePatientsStore()
 let patients = patientsStore.results; //SHOULD THIS USE reactive?
-
+// let patients = computed(() => patientsStore.getfilteredPatients,value); //SHOULD THIS USE reactive?
+console.log(patientsStore.searchQuery)
 // Define the search query
-const searchQuery = ref('');
+const searchQuery = patientsStore.searchQuery;
 
-const searchPatient = (obj, query) => {
-	//To lower cases --> easier to look //DO I NEED THIS?
+const searchPatient = (obj: object, query: string) => {
   const lowerQuery = query.toLowerCase();
-  // return Object.keys(obj).some(key => {
-  //   const value = obj[key];
-	// 	//THIS IS MORE ADVANCE, FIRST MAKE IT WORK 
-  //   if (typeof value === 'object' && value !== null) {
-  //     return searchPatient(value, query); // Recursively search nested objects
-  //   } else if (Array.isArray(value)) {
-  //     return value.some(item => searchPatient(item, query)); // Search within arrays
-  //   }
-  //   return value ? value.toString().toLowerCase().includes(lowerQuery) : false;
-  // });
-	// const lowerQuery = query.toLowerCase();
-  // Iterate over each value in the object
 	for (const value of Object.values(obj)) {
 		console.log("This is working")
         // Check if the value is a string and contains the search string
@@ -58,7 +44,7 @@ const searchPatient = (obj, query) => {
 
 // Compute the filtered patients based on the search query
 const filteredPatients = computed(() => {
-  const query = searchQuery.value;
+  const query = searchQuery;
   if (!query) {
 		return patients
 	};
@@ -103,7 +89,7 @@ const filteredPatients = computed(() => {
 					<td>{{ patient.program }}</td> -->
 				</tr>
 
-				<p v-if="filteredPatients.length === 0">No se encontraron pacientes.</p>
+				<p v-if="patients.length === 0">No se encontraron pacientes.</p>
       </tbody>
 		</table>
 	</div>
