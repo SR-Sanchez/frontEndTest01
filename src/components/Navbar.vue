@@ -11,7 +11,7 @@
       <li><router-link to="/citas">Citas</router-link></li>
       <li><router-link to="/doctor">Doctor</router-link></li>
       <li><router-link to="/departamento">Departamento</router-link></li>
-      <li><router-link to="/patients">Paciente</router-link></li>
+      <li><router-link to="/pacientes">Pacientes</router-link></li>
       <li><router-link to="/configuracion">Configuración</router-link></li>
     </ul>
   </div>
