@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import usePatientsStore from '../stores/patients.ts'
+import Patient from './Patient.vue';
 
 const headings = [ 
 	"Id",
@@ -29,7 +30,6 @@ let patients = patientsStore.results; //SHOULD THIS USE reactive?
 const searchPatient = (obj: object, query: string) => {
   const lowerQuery = query.toLowerCase();
 	for (const value of Object.values(obj)) {
-		console.log("This is working")
         // Check if the value is a string and contains the search string
         if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
             return value; // Match found
@@ -59,30 +59,9 @@ const filteredPatients = computed(() => {
 				</tr>
 			</thead>
 			<tbody>
-        <!--<tr v-for="patient in filteredPatients" :key="patient.id">
-					This is for iterating through the object (each patient) 
-          <th v-for="(value, key) in patient" :key="key">{{ value }}</th>
-        </tr> -->
 				<tr v-for="patient in filteredPatients" :key="patient.id">
-					<td v-for="(value, key) in patient" :key="key">{{ value }}</td>
-					<!-- <td>{{ patient.id }}</td>
-          <td>{{ patient.id_number }}</td>
-          <td>{{ patient.uid }}</td>
-          <td>{{ patient.name }}</td>
-          <td>{{ patient.age }}</td>
-          <td>{{ patient.phone }}</td>
-          <td>{{ patient.regime }}</td>
-          <td>{{ patient.monitoring }}</td>
-          <td>{{ patient.gestor }}</td>
-          <td>{{ patient.status }}</td>
-          <td>{{ patient.care_plan }}</td>
-          <td>{{ patient.intervention }}</td>
-          <td>{{ patient.clinical_data_uncontrolled }}</td>
-          <td>{{ patient.name_tag }}</td>
-          <td>{{ patient.ips_name }}</td>
-          <td>{{ patient.ips_id }}</td>
-					<td>{{ patient.gestion }}</td>
-					<td>{{ patient.program }}</td> -->
+					<!-- <td v-for="(value, key) in patient" :key="key">{{ value }}</td> -->
+					<Patient :patient="patient"/>
 				</tr>
 
 				<p v-if="filteredPatients.length === 0">No se encontraron pacientes.</p>
@@ -95,7 +74,7 @@ const filteredPatients = computed(() => {
 <style scoped>
 	table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse; /**STUDY THIS MORE */
 	}
 
 	th, td {
@@ -103,7 +82,17 @@ const filteredPatients = computed(() => {
 		padding: 8px;
 	}
 
-	th {
-	
+	/* NEED TO DOUBLE CHECK THE FOLLOWING RULES */
+	.results {
+		max-height: 80%; /* Set this to the height you want for the scrollable area */
+		overflow-y: auto;  /* Enable vertical scrolling */
+		display: block;
 	}
+
+	thead th {
+  position: sticky;  /* Makes the heading sticky */
+  top: 0;            /* Stick to the top */
+	background-color: #0a0a0a; /* Optional: Add a background color */
+  z-index: 1;        /* Ensure the heading stays on top of the table body */
+}
 </style>

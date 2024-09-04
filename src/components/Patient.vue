@@ -1,16 +1,35 @@
 <script setup lang="ts">
-import DataTable from './DataTable.vue'
-import InputSearch from './InputSearch.vue'
+//CHANGE THIS TYPE
+defineProps<{ patient }>()
 
 
 
 </script>
 
 <template>
-	<InputSearch/>
-	<DataTable/>
+	<td>{{ patient.id }}</td>
+	<td>{{ patient.id_number }}</td>
+	<td>{{ patient.uid }}</td>
+	<td>{{ patient.name }}</td>
+	<td>{{ patient.age }}</td>
+	<td>{{ patient.phone }}</td>
+	<td>{{ patient.regime }}</td>
+	<td>{{ patient.monitoring }}</td>
+	<td>{{ patient.gestor }}</td>
+	<td>{{ patient.status }}</td>
+	<td>{{ patient.care_plan }}</td>
+	<td>{{ patient.intervention }}</td>
+	<td>{{ patient.clinical_data_uncontrolled }}</td>
+	<td>{{ patient.name_tag }}</td>
+	<td>{{ patient.ips_name }}</td>
+	<td>{{ patient.ips_id }}</td>
+	<td>{{ patient.gestion }}</td>
+	<td>{{ patient.program }}</td>
 </template>
 
 <style scoped>
-	
+	td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
 </style>

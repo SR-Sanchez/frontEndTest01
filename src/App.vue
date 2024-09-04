@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Patient from './components/Patient.vue'
+import Patient from './components/Patients.vue'
 import Navbar from './components/Navbar.vue';
 import Pacientes from './views/Pacientes.vue';
 import { RouterView } from 'vue-router';

@@ -1,7 +1,7 @@
 <!-- NEED TO STUDY THIS -->
-<script setup>
+<script setup lang="ts">
 
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 import usePatientStore from '../stores/patients.ts';
 
 const patientsStore = usePatientStore();
@@ -23,6 +23,6 @@ const handleChange = () => {
   </div>
 </template>
 
-<style lang="scss">
+<style scoped>
 
 </style>
