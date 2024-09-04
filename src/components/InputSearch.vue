@@ -11,8 +11,8 @@ const localSearchQuery = ref('');
 // Function to handle change event
 const handleChange = () => {
   patientsStore.setSearchQuery(localSearchQuery.value)
-  console.log(`localSearchQuery.value is ${localSearchQuery.value}`)
-  console.log(patientsStore.searchQuery)
+  // console.log(`localSearchQuery.value is ${localSearchQuery.value}`)
+  // console.log(patientsStore.searchQuery)
 };
 
 </script>

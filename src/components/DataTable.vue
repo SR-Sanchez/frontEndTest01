@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import usePatientsStore from '../stores/patients.ts'
 
 const headings = [ 
@@ -25,8 +25,6 @@ const headings = [
 
 const patientsStore = usePatientsStore()
 let patients = patientsStore.results; //SHOULD THIS USE reactive?
-// let patients = computed(() => patientsStore.getfilteredPatients,value); //SHOULD THIS USE reactive?
-console.log(patientsStore.searchQuery)
 
 const searchPatient = (obj: object, query: string) => {
   const lowerQuery = query.toLowerCase();
@@ -87,7 +85,7 @@ const filteredPatients = computed(() => {
 					<td>{{ patient.program }}</td> -->
 				</tr>
 
-				<p v-if="patients.length === 0">No se encontraron pacientes.</p>
+				<p v-if="filteredPatients.length === 0">No se encontraron pacientes.</p>
       </tbody>
 		</table>
 	</div>
@@ -97,7 +95,7 @@ const filteredPatients = computed(() => {
 <style scoped>
 	table {
   width: 100%;
-  border-collapse: collapse; /**STUDY THIS MORE */
+  border-collapse: collapse;
 	}
 
 	th, td {
