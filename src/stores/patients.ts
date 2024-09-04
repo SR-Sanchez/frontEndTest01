@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import { ref, computed} from 'vue'
+import Patient from '../components/Patient.vue';
+// import searchPatient from '../utils/helpers'
 
 export default defineStore('patients', {
 	state: () => ({
@@ -280,6 +281,12 @@ export default defineStore('patients', {
 	actions: {
 		setSearchQuery(query: string) {
 			this.searchQuery = query
+		},
+
+		setResults(id: string) {
+			console.log('Updating results...');
+			this.results = this.results.filter(patient => patient.id != id );
+			console.log('Results updated:', this.results);
 		}
 	}
 })

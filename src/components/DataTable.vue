@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import usePatientsStore from '../stores/patients.ts'
 import Patient from './Patient.vue';
-
+import { searchPatient } from '../utils/helpers.ts';
 const headings = [ 
 	"Id",
 	// "# Identificación",
@@ -25,21 +25,22 @@ const headings = [
 	// "ID de IPS",
 	// "Gestión",
 	// "Programa"
+	"",
 ];
 
 const patientsStore = usePatientsStore()
 let patients = patientsStore.results; //SHOULD THIS USE reactive?
 
-const searchPatient = (obj: object, query: string) => {
-  const lowerQuery = query.toLowerCase();
-	for (const value of Object.values(obj)) {
-        // Check if the value is a string and contains the search string
-        if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
-            return value; // Match found
-        }
-    }
-  return false; // No match found
-};
+// const searchPatient = (obj: object, query: string) => {
+//   const lowerQuery = query.toLowerCase();
+// 	for (const value of Object.values(obj)) {
+//         // Check if the value is a string and contains the search string
+//         if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
+//             return value; // Match found
+//         }
+//     }
+//   return false; // No match found
+// };
 
 // Compute the filtered patients based on the search query
 const filteredPatients = computed(() => {
