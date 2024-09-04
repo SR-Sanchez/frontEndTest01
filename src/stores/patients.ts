@@ -286,7 +286,7 @@ export default defineStore('patients', {
 		setResults(id: string) {
 			console.log('Updating results...');
 			this.results = this.results.filter(patient => patient.id != id );
-			console.log('Results updated:', this.results);
+			console.log('Results updated:', this.results[0]);
 		}
 	}
 })

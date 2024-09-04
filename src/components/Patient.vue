@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import usePatientsStore from '../stores/patients.ts'
+import { useRouter } from 'vue-router';
 //CHANGE THIS TYPE
 defineProps<{ patient }>()
 
@@ -23,12 +24,16 @@ function toggle() {
 	console.log(showConfirm.value)
 }
 
+const router = useRouter();
+
 const patientsStore = usePatientsStore()
 
 function test(id: string) {
-	console.log(id)
-	return patientsStore.setResults(id)
-	console.log(patientsStore.results.length)
+	patientsStore.setResults(id)
+	/**Couldn't get the page to re-render so I had to 
+	 improvise this unelegant solution*/
+	router.go(-1);
+	router.go(1);
 }
 
 
