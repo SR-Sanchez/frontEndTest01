@@ -68,7 +68,9 @@ const filteredPatients = computed(() => {
       </tbody>
 		</table>
 	</div>
-
+	<div class="patient-count-summary">
+		Mostrando {{ filteredPatients.length }} de {{ patientsStore.total_patients }}
+	</div>
 </template>
 
 <style scoped>
@@ -94,5 +96,9 @@ const filteredPatients = computed(() => {
   top: 0;            /* Stick to the top */
 	background-color: #0a0a0a; /* Optional: Add a background color */
   z-index: 1;        /* Ensure the heading stays on top of the table body */
+}
+
+.patient-count-summary {
+	text-align: left;
 }
 </style>
