@@ -276,27 +276,7 @@ export default defineStore('patients', {
 		searchQuery: ''
 	}),
 
-	// actions: {
-	// 	searchPatient (obj: object, query: string) {
-	// 		const lowerQuery = query.toLowerCase();
-	// 		for (const value of Object.values(obj)) {
-	// 			// console.log("This is working")
-	// 					// Check if the value is a string and contains the search string
-	// 			if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
-	// 					return true; // Match found
-	// 			}
-	// 		}
-	// 		return false; // No match found
-	// 	},
-
-	// 	getfilteredPatients() {
-	// 		const query = this.searchQuery;
-	// 		if (!query) {
-	// 			return this.results
-	// 		};
-	// 		return this.results.filter(patient => this.searchPatient(patient, query));
-	// 	}
-	// }
+	
 	actions: {
 		setSearchQuery(query: string) {
 			this.searchQuery = query
@@ -304,26 +284,3 @@ export default defineStore('patients', {
 	}
 })
 
-// const searchQuery = ref('');
-
-	// const searchPatient = (obj: object, query: string) => {
-	// 	const lowerQuery = query.toLowerCase();
-	// 	for (const value of Object.values(obj)) {
-	// 		console.log("This is working")
-	// 				// Check if the value is a string and contains the search string
-	// 				if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
-	// 						return value; // Match found
-	// 				}
-	// 		}
-	// 	return false; // No match found
-	// };
-
-	// // Compute the filtered patients based on the search query
-	// const filteredPatients = computed(() => {
-	// 	const query = searchQuery.value;
-	// 	if (!query) {
-	// 		return patients
-	// 	};
-
-	// 	return patients.filter(patient => searchPatient(patient, query));
-	// });

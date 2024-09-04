@@ -27,8 +27,6 @@ const patientsStore = usePatientsStore()
 let patients = patientsStore.results; //SHOULD THIS USE reactive?
 // let patients = computed(() => patientsStore.getfilteredPatients,value); //SHOULD THIS USE reactive?
 console.log(patientsStore.searchQuery)
-// Define the search query
-const searchQuery = patientsStore.searchQuery;
 
 const searchPatient = (obj: object, query: string) => {
   const lowerQuery = query.toLowerCase();
@@ -44,7 +42,7 @@ const searchPatient = (obj: object, query: string) => {
 
 // Compute the filtered patients based on the search query
 const filteredPatients = computed(() => {
-  const query = searchQuery;
+  const query = patientsStore.searchQuery;
   if (!query) {
 		return patients
 	};
