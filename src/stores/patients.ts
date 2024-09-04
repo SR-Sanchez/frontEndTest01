@@ -297,6 +297,11 @@ export default defineStore('patients', {
 	// 		return this.results.filter(patient => this.searchPatient(patient, query));
 	// 	}
 	// }
+	actions: {
+		setSearchQuery(query: string) {
+			this.searchQuery = query
+		}
+	}
 })
 
 // const searchQuery = ref('');
