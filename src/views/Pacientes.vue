@@ -20,11 +20,9 @@ import InputSearch from '../components/InputSearch.vue'
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border: 2px solid green;
+		/* border: 2px solid green; */
 		margin: 0 2rem;
 		padding: 1rem 0;
-  	/* padding-top: 0; */
-		background-color: #ffffff;
 	}
 
 	.data-table {

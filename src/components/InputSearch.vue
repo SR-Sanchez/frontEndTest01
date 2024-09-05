@@ -23,6 +23,26 @@ const handleChange = () => {
 
 <style scoped>
   .input-search{
-    border: 2px solid rgb(200, 255, 0);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 0 1px #9d9e9a36;
+    border-radius: 2rem;
+    padding: 0rem 1rem;
+    height: 2.75rem;
+    background-color: #fff;
+    color:#8c8f92;
+
+    input {
+      border-style: none;
+      font-size: 1rem;
+      width: 15rem;
+      height: 95%;
+      color:#8c8f92;
+    }
+
+    i{
+      padding-left: 0.5rem;
+      font-size: 1.25rem;
+    }
   }
 </style>

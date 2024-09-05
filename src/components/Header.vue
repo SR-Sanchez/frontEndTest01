@@ -57,7 +57,7 @@ p {
 }
 
 .header{
-  border: 2px solid green;
+  /* border: 2px solid green; */
 	justify-content: space-between;
 	height: 10%;
   max-height: 5rem;

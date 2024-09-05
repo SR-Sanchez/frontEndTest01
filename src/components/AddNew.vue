@@ -10,16 +10,19 @@
 
 <style scoped>
   .add-new{
-    border: 2px solid rgb(200, 255, 0);
+    /* border: 2px solid rgb(200, 255, 0); */
   }
 
-  button{
-    button:hover {
-    border-color: #ff6464;
+  button {
+    border-radius: 2rem;
+    /* padding-left: 3rem;
+    padding-right: 3rem; */
+    padding: 0.5rem 3rem
   }
+  
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
-  }
+
 </style>
