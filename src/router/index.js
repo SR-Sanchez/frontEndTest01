@@ -8,7 +8,6 @@ import Configuracion from "../views/Configuracion.vue";
 
 
 const router = createRouter({
-	//NEED TO CREATE THIS IN ORDER TO WORK
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{

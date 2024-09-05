@@ -1,26 +1,25 @@
-*,
-*::before,
-*::after {
+/* Apply box-sizing to all elements and pseudo-elements */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* Root styles */
 :root {
   font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /*NOT SURE WHAT THIS DOES*/
-  font-synthesis: none;
+  font-synthesis: none; /* Control the synthesis of font features (experimental) */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Link styles */
 a {
   text-decoration: inherit;
 }
 
-
+/* Body styles */
 body {
   margin: 0;
   display: flex;
@@ -29,11 +28,13 @@ body {
   min-height: 100vh;
 }
 
+/* Heading styles */
 h1 {
   font-size: 2.5rem;
   line-height: 1.1;
 }
 
+/* Button styles */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -46,20 +47,19 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #542AC0;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
-
+/* App container styles */
 #app {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  border: 2px solid blue;
 }
-

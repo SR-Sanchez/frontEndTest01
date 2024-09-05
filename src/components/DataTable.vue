@@ -41,7 +41,6 @@ const filteredPatients = computed(() => {
 			</thead>
 			<tbody>
 				<tr v-for="patient in filteredPatients" :key="patient.id">
-					<!-- <td v-for="(value, key) in patient" :key="key">{{ value }}</td> -->
 					<Patient :patient="patient"/>
 				</tr>
 
@@ -55,10 +54,10 @@ const filteredPatients = computed(() => {
 </template>
 
 <style scoped>
-	/* NEED TO DOUBLE CHECK THE FOLLOWING RULES */
+	
 	.results {
 		max-height: 37.5rem;
-		overflow-y: auto;  /* Enable vertical scrolling */
+		overflow-y: auto;
 		display: block;
 	}
 
@@ -77,7 +76,7 @@ const filteredPatients = computed(() => {
 
 
 	th, td {
-		padding: 8px;
+		padding: 0.5rem;
 	}
 
 	td {
@@ -86,7 +85,7 @@ const filteredPatients = computed(() => {
 
 	thead th {
 		font-weight: 600;
-		position: sticky;  /* Makes the heading sticky */
+		position: sticky; 
 		top: 0;
 		background-color: #fff;
 		z-index: 1;  

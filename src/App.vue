@@ -17,17 +17,19 @@ import { RouterView } from 'vue-router';
 </template>
 
 <style scoped>
-  #app {
-  height: 100vh; /* Ensure the app takes the full viewport height */
+/* App container styles */
+#app {
+  height: 100vh;
   min-height: 37.5rem;
-  max-height: 50rem; /**MAY NEED TO CHANGE THIS */
+  max-height: 50rem;
   max-width: 1800px;
   display: flex;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Content styles */
 .content {
-  overflow-y: scroll;
-  overflow-x: scroll;
+  overflow: auto; /* Handles both vertical and horizontal scrolling */
   height: 100%;
   width: 100%;
   background-color: #f4f9f5;

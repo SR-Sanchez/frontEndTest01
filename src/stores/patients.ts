@@ -1,6 +1,4 @@
 import { defineStore } from 'pinia'
-import Patient from '../components/Patient.vue';
-// import searchPatient from '../utils/helpers'
 
 export default defineStore('patients', {
 	state: () => ({

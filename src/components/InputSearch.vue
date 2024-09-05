@@ -33,7 +33,7 @@ const handleChange = () => {
     color:#8c8f92;
 
     input {
-      border-style: none;
+      border: none;
       font-size: 1rem;
       width: 15rem;
       height: 95%;

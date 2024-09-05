@@ -16,19 +16,18 @@ import InputSearch from '../components/InputSearch.vue'
 </template>
 
 <style scoped>
-	.patient-heading{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		/* border: 2px solaid green; */
-		margin: 0 2rem;
-		padding: 1rem 0;
-	}
+/* Patient heading styles */
+.patient-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+  padding: 1rem 0;
+}
 
-	.data-table {
-		margin: 0 2rem;
-		max-height: 37.5rem;
-		/* padding: 1rem; */
-  	padding-top: 0;
-	}
+/* Data table styles */
+.data-table {
+  margin: 0 2rem;
+  max-height: 37.5rem;
+}
 </style>

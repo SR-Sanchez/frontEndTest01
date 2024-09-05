@@ -44,16 +44,15 @@ function test(id: string) {
 </script>
 
 <template>
+
 	<td style="padding-left: 1rem">{{ patient.id }}</td>
 	<td>{{ patient.name }}</td>
 	<td>{{ patient.age }}</td>
 	<td>{{ isEmpty(patient.phone) }}</td>
-
 	<td class="gestion">
 		{{ patient.gestion['gestion_type']}} 
 		{{ patient.gestion['last_contact'] }}
 	</td>
-
 	<td>{{ isEmpty(patient.regime) }}</td>
 	<td>{{ patient.gestor }}</td>
 	<td class="dropdown">
@@ -63,8 +62,6 @@ function test(id: string) {
 			<li v-for="item in returnList(patient.care_plan)">{{ item }}</li>
 		</ul>
 	</td>
-
-
 	<td class="dropdown">
 		Clínicos
 		<button v-on:click="toggle2()">&#9660</button>
@@ -72,12 +69,11 @@ function test(id: string) {
 			<li v-for="item in returnList(patient.clinical_data_uncontrolled)">{{ item }}</li>
 		</ul>
 	</td>
-
-
 	<td>{{ patient.ips_name }}</td>
 	<td>
 		<button class="trash-button" v-on:click="toggle3"><i class="fa-regular fa-trash-can"></i></button>
 	</td>
+
 	<div v-if="showConfirm" class="transparent-background" style="padding-right: 1rem"> 
 		<div class="confirm">
 			<p>Por favor confirme su decisión</p>
@@ -85,11 +81,13 @@ function test(id: string) {
 			<button v-on:click="toggle3">Cancelar</button>
 		</div>
 	</div>
+	
 </template>
 
 <style scoped>
+
 	td {
-		padding: 8px;
+		padding: 0.5rem;
 		white-space: nowrap;
 		color: #000000b9;
 	}
@@ -103,8 +101,8 @@ function test(id: string) {
 				flex-direction: column;
 				list-style: none;
 				position: absolute;
-				background-color: white;
-				box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+				background-color: #ffffff;
+				box-shadow: 0 8px 12px #00000033;
 				border-radius: 1rem;
 				padding: 16px;
 				max-height: 12.5rem;
@@ -156,22 +154,21 @@ function test(id: string) {
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		background-color: white;
-		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+		background-color: #ffffff;
+		box-shadow: 0 8px 12px #00000033;
 		border-radius: 1rem;
-		padding: 12px;
+		padding: 0.75rem;
 		z-index: 2;
 		max-width: 50%;
 		
-
 		button {
-			margin:8px;
+			margin: 0.5rem;
 			width: 50%;
 		}
 	}
 
 	.confirm button:first-of-type {
-  	background-color: #ff0000a2; /* Background color for the first button */
+  	background-color: #ff0000a2; 
 	}
 	
 

@@ -51,20 +51,19 @@
 </template>
 
 <style scoped>
-
+/* General styles for heading, paragraphs, card containers, and footer */
 h1, h2, p, .card-container, .footer {
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 2rem; 
+  margin-right: 2rem; 
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: space-between;
   padding-bottom: 1rem;
   height: 100%;
@@ -76,10 +75,12 @@ h1 {
   color: #38935e;
   padding-top: 1rem;
   font-weight: 400;
-  i{
-    padding-right: 0.5rem;
-  }
 }
+
+h1 i {
+  padding-right: 0.5rem; 
+}
+
 h2 {
   height: 5%;
   max-height: 5rem;
@@ -87,28 +88,25 @@ h2 {
   font-size: 1.25rem;
   font-weight: 500;
 }
+
 ul {
   height: 40%;
-  margin: 0 2rem 0 0;
+  margin-right: 2rem; 
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-items: center;
   max-height: 320px;
-  
 }
 
 li {
-	list-style: none;
-  
-  i {
-    padding-right: 0.75rem;
-    font-size: 1.25rem;
-  }
+  list-style: none;
 }
 
-
+li i {
+  padding-right: 0.75rem;
+  font-size: 1.25rem;
+}
 
 a {
   width: 100%;
@@ -119,10 +117,10 @@ a {
   padding: 0.75rem 0 0.75rem 2rem;
   color: #8c8f92;
   border-radius: 0 0 2rem 0;
-  
-  &:hover {
-    background-color: #c9efd48e;
-  }
+}
+
+.nav-item:hover {
+  background-color: #c9efd48e;
 }
 
 .active {
@@ -132,18 +130,17 @@ a {
 
 .card-container {
   height: 30%;
-  
-  .card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem 2rem;
-    color: #ffffff;
-    background-color: #ff6d4c;
-    border-radius: 1.5rem;
-    
-  }
+}
+
+.card-container .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  color: #ffffff;
+  background-color: #ff6d4c;
+  border-radius: 1.5rem;
 }
 
 .footer {
@@ -153,14 +150,14 @@ a {
   justify-content: flex-end; 
   min-height: fit-content;
   font-size: 0.75rem;
-  color:#8c8f92;;
-
-  .made {
-    padding-top: 0.75rem;
-  }
-  i {
-    color: #ff00006c;
-  }
+  color: #8c8f92;
 }
 
+.footer .made {
+  padding-top: 0.75rem;
+}
+
+.footer i {
+  color: #ff00006c;
+}
 </style>
