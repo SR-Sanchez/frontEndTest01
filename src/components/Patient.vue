@@ -76,7 +76,7 @@ function test(id: string) {
 
 	<td>{{ patient.ips_name }}</td>
 	<td>
-		<button v-on:click="toggle3">X</button>
+		<button v-on:click="toggle3"><i class="fa-regular fa-trash-can"></i></button>
 	</td>
 	<div v-if="showConfirm" class="transparent-background">
 		<div class="confirm">

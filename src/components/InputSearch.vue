@@ -20,9 +20,12 @@ const handleChange = () => {
 <template>
   <div class="input-search">
     <input v-model="localSearchQuery" @input="handleChange" placeholder="Buscar..." />
+    <i class="fa-solid fa-magnifying-glass"></i>
   </div>
 </template>
 
 <style scoped>
-
+  .input-search{
+    border: 2px solid rgb(200, 255, 0);
+  }
 </style>

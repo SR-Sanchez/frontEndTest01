@@ -7,7 +7,10 @@ import InputSearch from './InputSearch.vue'
 </script>
 
 <template>
-	<InputSearch/>
+	<div class="patient-heading">
+		<InputSearch/>
+	</div>
+	
 	<DataTable/>
 </template>
 

@@ -80,22 +80,21 @@ const filteredPatients = computed(() => {
 </template>
 
 <style scoped>
-	table {
-  width: 100%;
-  border-collapse: collapse; /**STUDY THIS MORE */
-	
-	}
-
-	th, td {
-		border: 1px solid #ddd;
-		padding: 8px;
-	}
-
 	/* NEED TO DOUBLE CHECK THE FOLLOWING RULES */
 	.results {
 		max-height: 80%; /* Set this to the height you want for the scrollable area */
 		overflow-y: auto;  /* Enable vertical scrolling */
 		display: block;
+	}
+
+	table {
+  /* width: 100%; */
+  border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid #ddd;
+		padding: 8px;
 	}
 
 	thead th {

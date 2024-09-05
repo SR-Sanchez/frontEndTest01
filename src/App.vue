@@ -28,7 +28,7 @@ import { RouterView } from 'vue-router';
   padding: 1rem;
   overflow-y: scroll;
   overflow-x: scroll;
-  height: 90%;
+  height: 100%;
   border: 2px solid red;
 }
 </style>
