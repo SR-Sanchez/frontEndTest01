@@ -6,7 +6,8 @@
 	<div class="sidebar">
     <h1><i class="fa-solid fa-heart-pulse"></i>ERES</h1>
     <h2>Menú principal</h2>
-    <ul>
+    <div>
+      <ul>
       <li><router-link to="/dashboard" exact-active-class="active" class="nav-item">
         <i class="fa-solid fa-server"></i>Dashboard
       </router-link></li>
@@ -26,19 +27,21 @@
         <i class="fa-solid fa-gear"></i>Configuración
       </router-link></li>
     </ul>
-    <div class="card">
+    </div>
+    <div class="card-container">
+      <div class="card">
       Mira tu calendario de trabajo
       <i class="fa-solid fa-square-arrow-up-right"></i>
+      </div>
     </div>
     <div class="footer">
       <div>
         <b>Eres - Dashboard administrativo</b>
       </div>
-      <br>
       <div>
         &copy; 2024 Todos los derechos reservados
       </div>
-      <div>
+      <div class="made">
         Hecho con <i class="fa-solid fa-heart"></i> por Sergio R.
       </div>
     </div>
@@ -48,7 +51,7 @@
 
 <style scoped>
 
-h1, h2, p, .card, .footer {
+h1, h2, p, .card-container, .footer {
   margin: 0;
   padding: 0;
   display: flex;
@@ -63,6 +66,7 @@ h1, h2, p, .card, .footer {
   /* align-items: center; */
   justify-content: space-between;
   padding-bottom: 1rem;
+  height: 100%;
 }
 
 h1 {
@@ -125,13 +129,20 @@ a {
   background: linear-gradient(to right, #2bc155, #71ec94); 
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid pink;
-  width: 80%;
-  text-align: left;
-  padding: 2em;
+.card-container {
+  height: 30%;
+  
+  .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    color: #ffffff;
+    background-color: #ff6d4c;
+    border-radius: 1.5rem;
+    
+  }
 }
 
 .footer {
@@ -139,11 +150,16 @@ a {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end; 
-  height: 20%;
   min-height: fit-content;
   font-size: 0.75rem;
   color:#8c8f92;;
-  border: 2px solid blue;
+
+  .made {
+    padding-top: 0.75rem;
+  }
+  i {
+    color: #ff00006c;
+  }
 }
 
 </style>

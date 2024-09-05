@@ -6,7 +6,9 @@ import { RouterView } from 'vue-router';
 
 <template>
   <div id="app">
-    <Navbar />
+    <div class="navbar-container">
+      <Navbar />
+    </div>
     <div class="content">
       <Heading/>
       <RouterView/>
@@ -16,12 +18,10 @@ import { RouterView } from 'vue-router';
 
 <style scoped>
   #app {
-  display: flex;
   height: 100vh; /* Ensure the app takes the full viewport height */
-  min-height: 400px;
+  min-height: 37.5rem;
   max-height: 50rem; /**MAY NEED TO CHANGE THIS */
-  display: grid;
-  grid-template-columns: 25% 73% auto;
+  display: flex;
 }
 
 .content {
@@ -30,6 +30,7 @@ import { RouterView } from 'vue-router';
   overflow-y: scroll;
   overflow-x: scroll;
   height: 100%;
+  width: 100%;
   border: 2px solid red;
 }
 </style>
