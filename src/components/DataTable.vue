@@ -31,7 +31,7 @@ const headings = [
 const patientsStore = usePatientsStore()
 let patients = patientsStore.results; //SHOULD THIS USE reactive?
 
-console.log(patients[0].id)
+
 
 // const searchPatient = (obj: object, query: string) => {
 //   const lowerQuery = query.toLowerCase();

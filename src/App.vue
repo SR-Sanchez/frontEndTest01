@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
+import Heading from './components/Heading.vue';
 import { RouterView } from 'vue-router';
 </script>
 
 <template>
   <div id="app">
     <Navbar />
-    
     <div class="content">
-      <!-- <Patient /> -->
-      <!-- <PatientView /> -->
-       <RouterView/>
+      <Heading/>
+      <RouterView/>
     </div>
   </div>
 </template>
@@ -26,6 +25,7 @@ import { RouterView } from 'vue-router';
 
 .content {
   padding: 1rem;
+  padding-top: 0;
   overflow-y: scroll;
   overflow-x: scroll;
   height: 100%;
