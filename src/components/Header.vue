@@ -38,7 +38,7 @@ const getPath = computed(() => {
 		<div class="container-right">
 			<i class="fa-regular fa-bell"></i>
 			<i class="fa-solid fa-user-doctor"></i>
-			<p>Bienvenido,<b>Usuario</b> </p>
+			<p>Bienvenido, <b>Usuario</b> </p>
 		</div>
 	</div>
 	
@@ -53,25 +53,40 @@ p {
 .header, .container-left, .container-right {
 	display: flex;
 	align-items: center;
+	background-color: #ffffff;
 }
 
 .header{
   border: 2px solid green;
 	justify-content: space-between;
+	height: 10%;
+  max-height: 5rem;
+  /* padding-top: 1rem; */
+	
+  font-weight: 400;
 }
 
 .container-left{
-	border: 2px solid purple;
-	font-size: 1.25rem;
+	/* border: 2px solid purple; */
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	font-weight: 600;
 	i{
-		padding-right: 0.5rem;
+		padding-right: 1rem;
 	}
 }
 
 .container-right{
-	border: 2px solid purple;
+	/* border: 2px solid purple; */
+	margin-right: 2rem;
 	i{
+		font-size: 1.5rem;
+		box-shadow: 0 0 4px #00800080;
+		border-radius: 2rem;
 		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+		margin: 0 0.5rem;
+		padding: 0.5rem 0.65rem
 	}
 }
 

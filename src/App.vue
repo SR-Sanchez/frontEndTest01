@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
-import Heading from './components/Heading.vue';
+import Heading from './components/Header.vue';
 import { RouterView } from 'vue-router';
 </script>
 
@@ -25,12 +25,11 @@ import { RouterView } from 'vue-router';
 }
 
 .content {
-  padding: 1rem;
-  padding-top: 0;
   overflow-y: scroll;
   overflow-x: scroll;
   height: 100%;
   width: 100%;
   border: 2px solid red;
+  background-color: #f4f9f5;
 }
 </style>

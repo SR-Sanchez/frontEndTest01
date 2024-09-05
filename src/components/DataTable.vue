@@ -82,9 +82,10 @@ const filteredPatients = computed(() => {
 <style scoped>
 	/* NEED TO DOUBLE CHECK THE FOLLOWING RULES */
 	.results {
-		max-height: 80%; /* Set this to the height you want for the scrollable area */
+		max-height: 37.5rem;
 		overflow-y: auto;  /* Enable vertical scrolling */
 		display: block;
+		
 	}
 
 	table {

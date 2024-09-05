@@ -28,7 +28,8 @@
       </router-link></li>
     </ul>
     </div>
-    <div class="card-container">
+    <!--HAVE TO MAKE THIS INTERACTIVE-->
+    <div class="card-container" v-on:click="console.log('hello')">
       <div class="card">
       Mira tu calendario de trabajo
       <i class="fa-solid fa-square-arrow-up-right"></i>

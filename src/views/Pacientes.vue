@@ -9,8 +9,10 @@ import InputSearch from '../components/InputSearch.vue'
 		<AddNew/>
 		<InputSearch/>
 	</div>
+	<div class="data-table">
+		<DataTable/>
+	</div>
 	
-	<DataTable/>
 </template>
 
 <style scoped>
@@ -19,5 +21,16 @@ import InputSearch from '../components/InputSearch.vue'
 		justify-content: space-between;
 		align-items: center;
 		border: 2px solid green;
+		margin: 0 2rem;
+		padding: 1rem 0;
+  	/* padding-top: 0; */
+		background-color: #ffffff;
+	}
+
+	.data-table {
+		margin: 0 2rem;
+		max-height: 37.5rem;
+		/* padding: 1rem; */
+  	padding-top: 0;
 	}
 </style>
