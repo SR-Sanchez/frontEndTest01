@@ -36,13 +36,19 @@ const getPath = computed(() => {
 			<p>{{ getPath }}</p>
 		</div>
 		<div class="container-right">
-			<p>some text</p>
+			<i class="fa-regular fa-bell"></i>
+			<i class="fa-solid fa-user-doctor"></i>
+			<p>Bienvenido,<b>Usuario</b> </p>
 		</div>
 	</div>
 	
 </template>
 
 <style scoped>
+
+p {
+	margin: 0;
+}
 
 .header, .container-left, .container-right {
 	display: flex;
@@ -56,10 +62,17 @@ const getPath = computed(() => {
 
 .container-left{
 	border: 2px solid purple;
+	font-size: 1.25rem;
+	i{
+		padding-right: 0.5rem;
+	}
 }
 
 .container-right{
 	border: 2px solid purple;
+	i{
+		padding-right: 0.5rem;
+	}
 }
 
 </style>

@@ -19,6 +19,7 @@ import { RouterView } from 'vue-router';
   display: flex;
   height: 100vh; /* Ensure the app takes the full viewport height */
   min-height: 400px;
+  max-height: 50rem; /**MAY NEED TO CHANGE THIS */
   display: grid;
   grid-template-columns: 20% 78% auto;
 }
