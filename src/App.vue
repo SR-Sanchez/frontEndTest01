@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Patient from './components/Patients.vue'
 import Navbar from './components/Navbar.vue';
-import Pacientes from './views/Pacientes.vue';
 import { RouterView } from 'vue-router';
 </script>
 
@@ -21,14 +19,16 @@ import { RouterView } from 'vue-router';
   #app {
   display: flex;
   height: 100vh; /* Ensure the app takes the full viewport height */
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 20% 78% auto;
 }
 
 .content {
-  margin-left: 48px; /* Match the width of the Navbar */
-  padding: 20px;
-  flex: 1; /* Allow content to take remaining space */
+  padding: 1rem;
   overflow-y: scroll;
   overflow-x: scroll;
-  height: 80%; /**MODIFY THIS */
+  height: 90%;
+  border: 2px solid red;
 }
 </style>

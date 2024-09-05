@@ -19,6 +19,10 @@
 
 <style scoped>
 
+h1, p {
+  margin: 0;
+}
+
 li {
 	list-style: none;
 }

@@ -20,16 +20,12 @@ let showConfirm = ref(false);
 let showPlan= ref(false)
 let showMenu= ref(false)
 
-
-
 function toggle1() {
 	showPlan.value = !showPlan.value
 }
-
 function toggle2(){
 	showMenu.value = !showMenu.value
 }
-
 function toggle3() {
 	showConfirm.value = !showConfirm.value
 }
