@@ -93,6 +93,8 @@ const filteredPatients = computed(() => {
 }
 
 .patient-count-summary {
+	padding-top: 0.5rem;
 	text-align: left;
+	font-weight: 500;
 }
 </style>

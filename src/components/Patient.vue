@@ -99,22 +99,28 @@ function test(id: string) {
 		position: relative;
 
 		.uncontrolled, .care_plan {
+				display: flex;
+				flex-direction: column;
 				list-style: none;
 				position: absolute;
-				background-color: bisque;
-				padding: 8px;
-				max-height: 80px;
+				background-color: white;
+				box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+				border-radius: 1rem;
+				padding: 16px;
+				max-height: 12.5rem;
 				overflow-y: scroll;
 				overflow-x: scroll;
 				top: 50%;
 				left: 0%;
-				width: 100%;
+				width: fit-content;
+				max-width: 12.5rem;
 				z-index: 1;
 			}
 
 		button {
 			font-size: 12px;
-			padding: 0px;
+			padding: 0.125rem 0.3rem;
+			border-radius: 2rem;
 		}
 	}
 

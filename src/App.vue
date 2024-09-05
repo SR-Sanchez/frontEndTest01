@@ -21,6 +21,7 @@ import { RouterView } from 'vue-router';
   height: 100vh; /* Ensure the app takes the full viewport height */
   min-height: 37.5rem;
   max-height: 50rem; /**MAY NEED TO CHANGE THIS */
+  max-width: 1800px;
   display: flex;
 }
 
@@ -29,7 +30,6 @@ import { RouterView } from 'vue-router';
   overflow-x: scroll;
   height: 100%;
   width: 100%;
-  border: 2px solid red;
   background-color: #f4f9f5;
 }
 </style>
