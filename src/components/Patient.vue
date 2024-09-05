@@ -44,7 +44,7 @@ function test(id: string) {
 </script>
 
 <template>
-	<td>{{ patient.id }}</td>
+	<td style="padding-left: 1rem">{{ patient.id }}</td>
 	<td>{{ patient.name }}</td>
 	<td>{{ patient.age }}</td>
 	<td>{{ isEmpty(patient.phone) }}</td>
@@ -76,9 +76,9 @@ function test(id: string) {
 
 	<td>{{ patient.ips_name }}</td>
 	<td>
-		<button v-on:click="toggle3"><i class="fa-regular fa-trash-can"></i></button>
+		<button class="trash-button" v-on:click="toggle3"><i class="fa-regular fa-trash-can"></i></button>
 	</td>
-	<div v-if="showConfirm" class="transparent-background">
+	<div v-if="showConfirm" class="transparent-background" style="padding-right: 1rem"> 
 		<div class="confirm">
 			<p>Por favor confirme su decisión</p>
 			<button v-on:click="test(patient.id)">Borrar</button>
@@ -89,9 +89,9 @@ function test(id: string) {
 
 <style scoped>
 	td {
-		border: 1px solid #ddd;
 		padding: 8px;
-		white-space: nowrap; 
+		white-space: nowrap;
+		color: #000000b9;
 	}
 
 	.dropdown {
@@ -128,6 +128,21 @@ function test(id: string) {
 		z-index: 1;
 	}
 
+	.trash-button {
+		background-color: transparent;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
+		i {
+			font-size: 1.25rem;
+			color: #ff0000a2;
+		}
+		&:hover {
+			border-color: #ff0000a2;
+		}
+	}
+
 	.confirm {
 		
 		display: flex;
@@ -135,7 +150,9 @@ function test(id: string) {
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		backdrop-filter: blur(10px);
+		background-color: white;
+		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+		border-radius: 1rem;
 		padding: 12px;
 		z-index: 2;
 		max-width: 50%;
@@ -145,6 +162,10 @@ function test(id: string) {
 			margin:8px;
 			width: 50%;
 		}
+	}
+
+	.confirm button:first-of-type {
+  	background-color: #ff0000a2; /* Background color for the first button */
 	}
 	
 

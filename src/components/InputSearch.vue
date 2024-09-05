@@ -38,6 +38,7 @@ const handleChange = () => {
       width: 15rem;
       height: 95%;
       color:#8c8f92;
+      outline: none;
     }
 
     i{

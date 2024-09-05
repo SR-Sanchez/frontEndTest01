@@ -20,7 +20,7 @@ import InputSearch from '../components/InputSearch.vue'
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		/* border: 2px solid green; */
+		/* border: 2px solaid green; */
 		margin: 0 2rem;
 		padding: 1rem 0;
 	}

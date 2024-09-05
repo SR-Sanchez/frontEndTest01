@@ -57,7 +57,6 @@ p {
 }
 
 .header{
-  /* border: 2px solid green; */
 	justify-content: space-between;
 	height: 10%;
   max-height: 5rem;
@@ -81,7 +80,7 @@ p {
 	margin-right: 2rem;
 	i{
 		font-size: 1.5rem;
-		box-shadow: 0 0 4px #00800080;
+		box-shadow: 0 0 4px #2ac055be;
 		border-radius: 2rem;
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;

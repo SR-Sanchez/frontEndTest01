@@ -4,47 +4,22 @@ import usePatientsStore from '../stores/patients.ts'
 import Patient from './Patient.vue';
 import { searchPatient } from '../utils/helpers.ts';
 const headings = [ 
-	"Id",
-	// "# Identificación",
-	// "Id Único",
+	"# Id",
 	"Nombre",
 	"Edad",
 	"Teléfono",
-
 	"Gestión",
-
 	"Régimen",
-	// "Monitoreo",
 	"Gestor",
-	// "Estado",
 	"Plan de Cuidado",
-	// "Intervención",
-	"Datos Clínicos No Controlados",
-	// "Etiqueta de Nombre",
+	"Datos Clínicos",
 	"Nombre de IPS",
-	// "ID de IPS",
-	// "Gestión",
-	// "Programa"
 	"",
 ];
 
 const patientsStore = usePatientsStore()
-let patients = patientsStore.results; //SHOULD THIS USE reactive?
+let patients = patientsStore.results; 
 
-
-
-// const searchPatient = (obj: object, query: string) => {
-//   const lowerQuery = query.toLowerCase();
-// 	for (const value of Object.values(obj)) {
-//         // Check if the value is a string and contains the search string
-//         if (typeof value === 'string' && value.toLowerCase().includes(lowerQuery)) {
-//             return value; // Match found
-//         }
-//     }
-//   return false; // No match found
-// };
-
-// Compute the filtered patients based on the search query
 const filteredPatients = computed(() => {
   const query = patientsStore.searchQuery;
   if (!query) {
@@ -85,24 +60,36 @@ const filteredPatients = computed(() => {
 		max-height: 37.5rem;
 		overflow-y: auto;  /* Enable vertical scrolling */
 		display: block;
-		
 	}
 
 	table {
-  
-  border-collapse: collapse;
+		border-collapse: collapse;
+		text-align: left;
 	}
 
+	table tr:nth-child(even) {
+  	background-color: #ffff; 
+	}
+
+	table tr:nth-child(odd) {
+		background-color: #f2f2f2; 
+	}
+
+
 	th, td {
-		border: 1px solid #ddd;
 		padding: 8px;
 	}
 
+	td {
+		border-style: none;
+	}
+
 	thead th {
-  position: sticky;  /* Makes the heading sticky */
-  top: 0;            /* Stick to the top */
-	background-color: #0a0a0a; /* Optional: Add a background color */
-  z-index: 1;        /* Ensure the heading stays on top of the table body */
+		font-weight: 600;
+		position: sticky;  /* Makes the heading sticky */
+		top: 0;
+		background-color: #fff;
+		z-index: 1;  
 }
 
 .patient-count-summary {
