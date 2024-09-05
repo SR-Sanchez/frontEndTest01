@@ -12,4 +12,14 @@
   .add-new{
     border: 2px solid rgb(200, 255, 0);
   }
+
+  button{
+    button:hover {
+    border-color: #ff6464;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  }
 </style>

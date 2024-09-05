@@ -21,7 +21,7 @@ import { RouterView } from 'vue-router';
   min-height: 400px;
   max-height: 50rem; /**MAY NEED TO CHANGE THIS */
   display: grid;
-  grid-template-columns: 20% 78% auto;
+  grid-template-columns: 25% 73% auto;
 }
 
 .content {
